@@ -1,5 +1,5 @@
 import React from 'react';
-import Graph from './Graph';
+import BarGraph from './BarGraph';
 import './App.css';
 
 export default function App(props) {
@@ -9,7 +9,7 @@ export default function App(props) {
     const scores = data[key].map(point => {
       return { x: point.time, y: point.score };
     });
-    return <Graph label={key} scores={scores} />;
+    return <BarGraph label={key} scores={scores} />;
   };
 
   return <div>{Object.keys(data).map(buildGraph)}</div>;
