@@ -5,7 +5,7 @@ import App from './App';
 import TweetReducer from './TweetReducer';
 
 export default function AppContainer(props) {
-  const socket = io.connect('http://localhost:9001');
+  const socket = io();
   let [state, dispatch] = useReducer(TweetReducer, {});
 
   useEffect(() => {
