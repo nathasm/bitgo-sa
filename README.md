@@ -1,6 +1,6 @@
 # bitgo-sa
 
-This is an example application which reads streaming data from the twitter API and then compares the sentiment of the tweets in time series graphs
+This is an example application which reads streaming data from the twitter API and then computes the sentiment of the tweets which is then displayed in a time series graph
 
 ## Getting Started
 
@@ -81,18 +81,18 @@ Currently the count is not used, but future work could be done to display this i
 
 There are a number of components that were written for the client. There is a container which manages state and the updates coming from the server. The remaining components are presentation components responsible for displaying the data.
 
-#### AppContainer
+#### App
 
-`AppContainer` is a container component responsible for opening up the websocket connection to the server and processing the updates. It uses the `useReducer` React hook to manage state.
+`App.js` is a stateful component responsible for opening up the websocket connection to the server and processing the updates. It uses the `useReducer` React hook to manage state. It is also responsible for using ChartJS to draw the graph. When the state changes it re-computes the dataset to be passed to the Line chart which is responsible for rerender the chart.
 
 #### TweetReducer
 
-`TweetReducer` is a reusable reducer which effectively will append new updates to the component state. The state is indexed by keyword and each entry into the object contains an array of time/score tuples.
+`TweetReducer.js` is a reusable reducer which effectively will append new updates to the component state. The state is indexed by keyword and each entry into the object contains an array of time/score tuples.
 
-#### BarApp
+#### GraphConfig
 
-`BarApp` is the top-level presentational component. Its main responsibility is to set up the layout and render the different graphs.
+`GraphConfig.js` just contains some default settings and options that are used to render the Line chart
 
-#### BarGraph
+#### GraphConfig
 
-`BarGraph` is another presentation component that simply will take data in data and display a graph
+`GraphConfig.js` just contains some default settings and options that are used to render the Line chart
