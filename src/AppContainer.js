@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 
 import React, { useEffect, useReducer } from 'react';
-import App from './App';
+import BarApp from './BarApp';
 import TweetReducer from './TweetReducer';
 
 export default function AppContainer(props) {
@@ -20,5 +20,5 @@ export default function AppContainer(props) {
     };
   });
 
-  return <App data={state} />;
+  return <BarApp data={state} />;
 }

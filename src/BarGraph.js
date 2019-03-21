@@ -3,6 +3,13 @@ import { Bar } from 'react-chartjs-2';
 
 const options = {
   responsive: true,
+  animation: {
+    duration: 0 // general animation time
+  },
+  hover: {
+    animationDuration: 0 // duration of animations when hovering an item
+  },
+  responsiveAnimationDuration: 0, // animation duration after a resize
   tooltips: {
     mode: 'label'
   },
@@ -38,7 +45,7 @@ const options = {
   }
 };
 
-export default function Graph(props) {
+export default function BarGraph(props) {
   const { label, scores } = props;
   const data = {
     datasets: [
