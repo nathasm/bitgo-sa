@@ -3,8 +3,8 @@ import reducer from '../TweetReducer';
 const mockState = {
   art: [
     {
-      time: 'time',
-      score: 1
+      x: 'time',
+      y: 1
     }
   ]
 };
@@ -37,10 +37,10 @@ describe('TweetReducer', () => {
     ).toEqual({
       art: [
         {
-          time: 'time',
-          score: 1
+          x: 'time',
+          y: 1
         },
-        { time: 'time', score: 2 }
+        { x: 'time', y: 2 }
       ]
     });
   });
@@ -54,13 +54,13 @@ describe('TweetReducer', () => {
         score: 1,
         time: 'time'
       })
-    ).toEqual({ ...mockState, facebook: [{ time: 'time', score: 1 }] });
+    ).toEqual({ ...mockState, facebook: [{ x: 'time', y: 1 }] });
   });
 
   it('should handle "add" to an existing new keyword entry', () => {
     const initialState = {
       ...mockState,
-      facebook: [{ time: 'time', score: 1 }]
+      facebook: [{ x: 'time', y: 1 }]
     };
     expect(
       reducer(initialState, {
@@ -72,7 +72,7 @@ describe('TweetReducer', () => {
       })
     ).toEqual({
       ...mockState,
-      facebook: [{ time: 'time', score: 1 }, { time: 'time', score: 2 }]
+      facebook: [{ x: 'time', y: 1 }, { x: 'time', y: 2 }]
     });
   });
 });

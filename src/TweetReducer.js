@@ -9,7 +9,7 @@ export default function(state = initialState, action) {
     case 'add':
       const scores = state[action.key] || [];
       let newState = scores.slice();
-      newState.push({ time: action.time, score: action.score });
+      newState.push({ x: action.time, y: action.score });
       return {
         ...state,
         [action.key]: newState
