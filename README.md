@@ -89,10 +89,10 @@ There are a number of components that were written for the client. There is a co
 
 `TweetReducer` is a reusable reducer which effectively will append new updates to the component state. The state is indexed by keyword and each entry into the object contains an array of time/score tuples.
 
-#### App
+#### BarApp
 
-`App` is the top-level presentational component. Its main responsibility is to set up the layout and render the different graphs.
+`BarApp` is the top-level presentational component. Its main responsibility is to set up the layout and render the different graphs.
 
-#### Graph
+#### BarGraph
 
-`Graph` is another presentation component that simply will take data in data and display a graph
+`BarGraph` is another presentation component that simply will take data in data and display a graph
