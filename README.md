@@ -92,7 +92,3 @@ There are a number of components that were written for the client. There is a co
 #### GraphConfig
 
 `GraphConfig.js` just contains some default settings and options that are used to render the Line chart
-
-#### GraphConfig
-
-`GraphConfig.js` just contains some default settings and options that are used to render the Line chart
