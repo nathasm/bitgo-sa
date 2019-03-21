@@ -1,0 +1,45 @@
+{
+  "name": "bitgo-sa",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:9000/",
+  "dependencies": {
+    "chart.js": "^2.8.0",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "react": "^16.8.4",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "sentiment": "^5.0.1",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test:watch": "react-scripts test",
+    "test:client": "react-scripts test --no-watch",
+    "test:server": "npx mocha server/test",
+    "test": "npm run test:client; npm run test:server",
+    "eject": "react-scripts eject",
+    "start:debug": "DEBUG=bitgo:* node index",
+    "server": "npm run build; node index",
+    "server:debug": "npm run build; DEBUG=bitgo:* node index"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  }
+}
