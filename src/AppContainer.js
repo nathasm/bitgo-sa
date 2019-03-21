@@ -5,10 +5,10 @@ import BarApp from './BarApp';
 import TweetReducer from './TweetReducer';
 
 export default function AppContainer(props) {
-  const socket = io();
   let [state, dispatch] = useReducer(TweetReducer, {});
 
   useEffect(() => {
+    const socket = io();
     socket.on('data', data => {
       Object.keys(data).forEach(key => {
         dispatch({ type: 'add', ...data[key] });
@@ -18,7 +18,7 @@ export default function AppContainer(props) {
     return () => {
       socket.disconnect();
     };
-  });
+  }, []);
 
   return <BarApp data={state} />;
 }
