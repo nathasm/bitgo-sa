@@ -1,8 +1,10 @@
 import io from 'socket.io-client';
 
 import React, { useEffect, useReducer } from 'react';
-import BarApp from './BarApp';
+import { Line } from 'react-chartjs-2';
 import TweetReducer from './TweetReducer';
+
+import { chartOptions, backgroundColors, borderColors } from './GraphConfig';
 
 export default function AppContainer(props) {
   let [state, dispatch] = useReducer(TweetReducer, {});
@@ -20,5 +22,24 @@ export default function AppContainer(props) {
     };
   }, []);
 
-  return <BarApp data={state} />;
+  let chartData = {
+    datasets: []
+  };
+
+  let updateChart = state => {
+    Object.keys(state).forEach((key, index) => {
+      chartData.datasets[index] = {
+        backgroundColor: backgroundColors[index],
+        borderColor: borderColors[index],
+        data: state[key],
+        label: key
+      };
+    });
+  };
+
+  return (
+    <Line data={chartData} options={chartOptions}>
+      {updateChart(state)}
+    </Line>
+  );
 }
