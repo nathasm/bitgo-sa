@@ -30,6 +30,9 @@
     "server": "npm run build; node index",
     "server:debug": "npm run build; DEBUG=bitgo:* node index"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
